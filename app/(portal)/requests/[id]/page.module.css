@@ -1,0 +1,14 @@
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status span:last-child {
+  margin-left: 0;
+}
+
+.label {
+  font: 500 13px var(--font-ui);
+  color: var(--primary-300);
+}

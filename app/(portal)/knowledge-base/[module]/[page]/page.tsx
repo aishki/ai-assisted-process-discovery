@@ -3,10 +3,11 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeforeYouRequestBanner } from "@/components/kb/BeforeYouRequestBanner";
-import { DocumentIcon } from "@/components/kb/icons";
+import { Breadcrumb } from "@/components/kb/Breadcrumb";
+import { ResourceList } from "@/components/kb/ResourceList";
 import { BANNER_COOKIE } from "@/lib/kb/banner";
 import { getPage } from "@/lib/kb/queries";
-import { kbPageHref } from "@/lib/routes";
+import { KB_HOME_HREF, kbPageHref } from "@/lib/routes";
 import styles from "./page.module.css";
 
 type Props = { params: Promise<{ module: string; page: string }> };
@@ -29,15 +30,13 @@ export default async function KnowledgeBasePage({ params }: Props) {
       {showBanner && <BeforeYouRequestBanner />}
 
       <div className={styles.intro}>
-        <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
-          <span>Knowledge base</span>
-          <span aria-hidden="true">/</span>
-          <span>{page.moduleTitle}</span>
-          <span aria-hidden="true">/</span>
-          <span className={styles.crumbCurrent} aria-current="page">
-            {page.title}
-          </span>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: "Knowledge base", href: KB_HOME_HREF },
+            { label: page.moduleTitle, href: page.moduleHref },
+            { label: page.title },
+          ]}
+        />
         <h1 className={styles.title}>{page.title}</h1>
         <div className={styles.chips}>
           <span className={styles.reviewedChip}>Reviewed {page.updated}</span>
@@ -60,17 +59,7 @@ export default async function KnowledgeBasePage({ params }: Props) {
         <h2 id="kb-in-section" className={styles.sectionTitle}>
           In this section
         </h2>
-        <ul className={styles.resources}>
-          {page.resources.map((r) => (
-            <li key={r.title} className={styles.resource}>
-              <span className={styles.resourceIcon}>
-                <DocumentIcon />
-              </span>
-              <span className={styles.resourceTitle}>{r.title}</span>
-              <span className={styles.resourceKind}>{r.kind}</span>
-            </li>
-          ))}
-        </ul>
+        <ResourceList resources={page.resources} />
       </section>
 
       <nav className={styles.pager} aria-label="Previous and next page">

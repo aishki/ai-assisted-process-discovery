@@ -4,20 +4,6 @@
   gap: 14px;
 }
 
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px 8px;
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.crumbCurrent {
-  font-weight: 500;
-  color: var(--purple);
-}
-
 .title {
   margin: 0;
   font-weight: 500;
@@ -96,44 +82,6 @@
   font-weight: 600;
   font-size: 18px;
   color: var(--dark-gray);
-}
-
-.resources {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.resource {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 4px;
-  border-top: 1px solid var(--pale-purple);
-}
-
-.resourceIcon {
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-10);
-  background: var(--pale-purple);
-}
-
-.resourceTitle {
-  flex: 1;
-  min-width: 0;
-  font-size: 15px;
-  color: var(--dark-gray);
-}
-
-.resourceKind {
-  font: 500 12px var(--font-ui);
-  color: var(--text-muted);
-  white-space: nowrap;
 }
 
 .pager {

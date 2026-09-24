@@ -20,10 +20,37 @@
   gap: 14px;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .update {
   display: flex;
   flex-direction: column;
   gap: 3px;
+}
+
+/* Hover tint bleeds past the text so rows stay aligned with the heading. */
+.linked,
+.request {
+  margin: -6px -8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-8);
+  transition: background var(--duration-base) var(--ease-standard);
+}
+
+.linked:hover,
+.request:hover {
+  background: var(--pale-purple);
+}
+
+.linked:hover .what {
+  color: var(--purple);
 }
 
 .when {
@@ -50,6 +77,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.empty {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
 }
 
 .requestId {
@@ -82,45 +115,6 @@
 .viewAll {
   font-weight: 600;
   font-size: 13px;
-}
-
-.ask {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  border-radius: var(--radius-15);
-  background: var(--pale-purple);
-}
-
-.askTitle {
-  margin: 0;
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--purple);
-}
-
-.askNote {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--dark-gray);
-}
-
-.askInput {
-  height: 38px;
-  padding: 0 14px;
-  border: none;
-  border-radius: 19px;
-  background: var(--white);
-  font: 400 14px var(--font-brand);
-  color: var(--dark-gray);
-  outline: none;
-}
-
-.askInput:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
 }
 
 /* Below 1200px the rail wraps under main, in column 2. */

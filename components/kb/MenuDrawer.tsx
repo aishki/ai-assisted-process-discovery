@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { MENU } from "@/lib/routes";
+import { activeMenuHref, MENU } from "@/lib/routes";
 import styles from "./MenuDrawer.module.css";
 
 export function MenuDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const activeHref = activeMenuHref(usePathname());
 
   useEffect(() => {
     if (!open) return;
@@ -33,7 +35,7 @@ export function MenuDrawer({ open, onClose }: { open: boolean; onClose: () => vo
           <div key={g.group} className={styles.group}>
             <span className={styles.groupLabel}>{g.group}</span>
             {g.items.map((item) => {
-              const active = item.label === "Knowledge base";
+              const active = item.href === activeHref;
               return (
                 <Link
                   key={item.label}
