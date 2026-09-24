@@ -5,6 +5,7 @@ import { AskBox } from "./AskBox";
 import styles from "./RightRail.module.css";
 
 export const STATUS_CLASS: Record<RequestStatus, string> = {
+  Submitted: styles.statusSubmitted,
   "AI review": styles.statusReview,
   "Needs info": styles.statusNeedsInfo,
   Draft: styles.statusDraft,

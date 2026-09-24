@@ -50,3 +50,18 @@
   background: var(--pale-purple);
   color: var(--action-primary-hover);
 }
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.solid:disabled:hover {
+  background: var(--action-primary);
+}
+
+.outline:disabled:hover,
+.inverse:disabled:hover {
+  background: var(--white);
+  color: var(--action-primary);
+}

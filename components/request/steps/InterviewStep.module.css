@@ -1,0 +1,209 @@
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-20);
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--purple);
+  font: 600 12px var(--font-ui);
+  color: var(--purple);
+  transition:
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.current {
+  background: var(--pale-purple);
+}
+
+.answered {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.flagged {
+  box-shadow: inset 0 0 0 1px var(--warning);
+  color: var(--dark-gray);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-20);
+  background: var(--light-gray);
+  box-shadow: var(--ring-card);
+  overflow: hidden;
+}
+
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 440px;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+}
+
+.fromUser {
+  justify-content: flex-end;
+}
+
+.avatar {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 11px var(--font-ui);
+  color: var(--white);
+}
+
+.bubbleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 560px;
+  min-width: 0;
+}
+
+.tag {
+  font: 600 11px var(--font-ui);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.bubble {
+  margin: 0;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--ring-card);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--dark-gray);
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.fromUser .bubble {
+  background: var(--purple);
+  box-shadow: none;
+  color: var(--white);
+}
+
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.failed {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-left: 44px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--warning);
+  font-size: 14px;
+}
+
+.failed button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: 600 14px var(--font-brand);
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.composer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+  background: var(--white);
+  border-top: 1px solid var(--pale-purple);
+}
+
+.input {
+  flex: 1 1 300px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--light-gray);
+  box-shadow: var(--ring-card);
+  font: 400 15px/1.5 var(--font-brand);
+  color: var(--dark-gray);
+  outline: none;
+  resize: none;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.flag {
+  height: 38px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 19px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--purple);
+  font: 600 14px var(--font-brand);
+  color: var(--purple);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-standard);
+}
+
+.flag:hover:not(:disabled) {
+  background: var(--pale-purple);
+}
+
+.flag:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.done {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--white);
+  border-top: 1px solid var(--pale-purple);
+}
+
+.done span {
+  flex: 1 1 260px;
+  font-size: 15px;
+}

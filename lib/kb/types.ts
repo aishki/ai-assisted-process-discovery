@@ -47,7 +47,7 @@ export type KbUpdateSource = { when: string; what: string; link?: string };
 
 export type KbUpdate = { when: string; what: string; href: string | null };
 
-export type RequestStatus = "AI review" | "Needs info" | "Draft";
+export type RequestStatus = "Submitted" | "AI review" | "Needs info" | "Draft";
 
 export type KbRequest = { id: string; status: RequestStatus };
 

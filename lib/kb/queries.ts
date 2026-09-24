@@ -1,6 +1,7 @@
 import "server-only";
 import { kbPageHref } from "@/lib/routes";
-import { MODULES, MY_REQUESTS, UPDATES } from "./data";
+import { findRequest, listRequests } from "@/lib/requests/store";
+import { MODULES, UPDATES } from "./data";
 import { searchEntries, tokenize } from "./search";
 import type {
   KbAskResponse,
@@ -146,9 +147,9 @@ export async function getRecentUpdates(limit = 3): Promise<KbUpdate[]> {
 }
 
 export async function getMyRequests(limit = 3): Promise<KbRequest[]> {
-  return MY_REQUESTS.slice(0, limit);
+  return listRequests(limit);
 }
 
 export async function getRequest(id: string): Promise<KbRequest | null> {
-  return MY_REQUESTS.find((r) => r.id === id) ?? null;
+  return findRequest(id);
 }

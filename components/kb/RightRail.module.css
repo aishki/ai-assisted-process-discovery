@@ -95,6 +95,12 @@
   font: 600 11px var(--font-ui);
 }
 
+.statusSubmitted {
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--purple);
+  color: var(--purple);
+}
+
 .statusReview {
   background: var(--purple);
   color: var(--white);

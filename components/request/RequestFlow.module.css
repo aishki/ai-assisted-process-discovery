@@ -1,0 +1,23 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-page);
+}
+
+/* The request steps sit a little roomier than knowledge base pages. */
+.main {
+  padding: 36px 48px 56px;
+}
+
+.loading {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 819.98px) {
+  .main {
+    padding: 28px 20px 48px;
+  }
+}

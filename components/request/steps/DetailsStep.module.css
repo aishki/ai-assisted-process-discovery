@@ -1,0 +1,182 @@
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--purple);
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--pale-purple);
+  border-top-color: var(--purple);
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-10);
+  box-shadow: inset 0 0 0 1px var(--warning);
+  font-size: 14px;
+}
+
+.errorBox p {
+  flex: 1 1 260px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.errorBox button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: 600 14px var(--font-brand);
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.labelRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  padding: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.chip {
+  padding: 2px 9px;
+  border-radius: var(--radius-20);
+  background: var(--pale-purple);
+  font: 600 11px var(--font-ui);
+  color: var(--purple);
+}
+
+.chipCheck {
+  background: #FDF3D7;
+  color: #6B4A00;
+}
+
+.confirmed {
+  font: 500 11px var(--font-ui);
+  color: var(--purple);
+}
+
+.input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius-10);
+  background: var(--light-gray);
+  box-shadow: var(--ring-card);
+  font: 400 15px/1.5 var(--font-brand);
+  color: var(--dark-gray);
+  outline: none;
+  resize: vertical;
+  transition: box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.edited {
+  box-shadow: inset 0 0 0 1px var(--purple);
+}
+
+.input[aria-invalid="true"] {
+  box-shadow: inset 0 0 0 1px var(--warning);
+}
+
+.skeleton {
+  color: transparent;
+  background: linear-gradient(90deg, var(--light-gray) 0%, var(--pale-purple) 50%, var(--light-gray) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+  cursor: progress;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .skeleton {
+    animation: none;
+  }
+}
+
+.fieldError {
+  font-size: 13px;
+  color: #8A5A00;
+}
+
+.sensitivity {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sensitivity legend {
+  margin-bottom: 10px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary {
+  font-size: 14px;
+  color: #8A5A00;
+}

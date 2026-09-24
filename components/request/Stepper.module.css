@@ -1,0 +1,118 @@
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 28px 18px;
+}
+
+.label {
+  padding: 0 10px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  font-family: var(--font-brand);
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-standard);
+}
+
+.step:not(:disabled):hover {
+  background: var(--pale-purple);
+}
+
+.step:disabled {
+  cursor: default;
+}
+
+.current {
+  background: var(--white);
+}
+
+.dot {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--purple);
+  font: 600 13px var(--font-ui);
+  color: var(--purple);
+}
+
+.current .dot,
+.done .dot {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 5px;
+  min-width: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark-gray);
+}
+
+.current .title {
+  font-weight: 600;
+  color: var(--purple);
+}
+
+.sub {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(35, 30, 51, 0.65);
+}
+
+.help {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 12px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+}
+
+.helpTitle {
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+@media (max-width: 1199.98px) {
+  /* Room above the fold matters more than a bottom-anchored footer here. */
+  .help {
+    margin-top: 24px;
+  }
+}

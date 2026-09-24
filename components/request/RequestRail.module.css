@@ -1,0 +1,79 @@
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 36px 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  border-radius: var(--radius-15);
+  box-shadow: var(--ring-card);
+}
+
+.heading {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--dark-gray);
+}
+
+.score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.pct {
+  font: 600 36px/1 var(--font-ui);
+  color: var(--purple);
+}
+
+.ready {
+  font-size: 14px;
+  color: rgba(35, 30, 51, 0.65);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-top: 4px;
+  font-size: 14px;
+}
+
+.stats div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats dd {
+  margin: 0;
+  font: 600 13px var(--font-ui);
+}
+
+.tip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  border-radius: var(--radius-15);
+  background: var(--pale-purple);
+}
+
+.tipTitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--purple);
+}
+
+.tipBody {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}

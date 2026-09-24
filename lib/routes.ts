@@ -3,6 +3,7 @@ export const kbPageHref = (moduleSlug: string, pageSlug: string) =>
 
 export const KB_HOME_HREF = "/knowledge-base";
 export const CHECKLIST_HREF = kbPageHref("start-here", "before-you-request-checklist");
+export const TEMPLATES_HREF = kbPageHref("templates-library", "charter-and-storyboard");
 export const kbSearchHref = (q: string) => `/knowledge-base/search?q=${encodeURIComponent(q)}`;
 
 /** id of the Ask the knowledge base input, so other pages can link straight to it. */
@@ -28,11 +29,6 @@ export const PLACEHOLDERS = {
   home: {
     title: "Automation Portal home",
     body: "Your starting point for the knowledge base, your requests and team updates.",
-  },
-  newRequest: {
-    title: "Request an automation",
-    module: "Module 2",
-    body: "The gated request form opens after the four qualification checks pass. Until it is live, get your evidence ready with the checklist.",
   },
   myRequests: {
     title: "My requests",
@@ -73,7 +69,7 @@ export const MENU: MenuGroup[] = [
       { label: "Home", href: HOME_HREF },
       { label: "Knowledge base", href: KB_HOME_HREF },
       { label: "Before you request", href: CHECKLIST_HREF },
-      { label: "Templates library", href: kbPageHref("templates-library", "charter-and-storyboard") },
+      { label: "Templates library", href: TEMPLATES_HREF },
       { label: "Past projects portfolio", href: kbPageHref("past-projects-portfolio", "by-platform") },
       { label: "FAQs and glossary", href: kbPageHref("faqs-and-glossary", "faqs") },
     ],

@@ -1,0 +1,92 @@
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 48px;
+  border-radius: var(--radius-20);
+  background: var(--dark-purple);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.panel > :not(.graphic) {
+  position: relative;
+}
+
+.graphic {
+  position: absolute;
+  right: -220px;
+  top: -160px;
+  width: 820px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tint-eyebrow);
+}
+
+.title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title:focus {
+  outline: none;
+}
+
+.body {
+  margin: 0;
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--primary-300);
+}
+
+.trail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+}
+
+.trail li {
+  padding: 7px 14px;
+  border-radius: var(--radius-20);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--primary-300);
+}
+
+.trail .now {
+  background: var(--white);
+  color: var(--purple);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 819.98px) {
+  .panel {
+    padding: 32px 24px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}
