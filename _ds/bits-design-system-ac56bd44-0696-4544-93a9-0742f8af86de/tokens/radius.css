@@ -1,0 +1,13 @@
+/* Corner radii — every value below appears verbatim in the source file. */
+:root {
+  --radius-4: 4px;        /* small checkbox */
+  --radius-8: 8px;        /* tertiary button, small text button */
+  --radius-10-14: 10.140845px; /* filter checkbox (exact source value) */
+  --radius-15: 15px;      /* tool card */
+  --radius-16: 16px;      /* stat card */
+  --radius-20: 20px;      /* pill button, table panel */
+  --radius-30: 30px;      /* avatar */
+  --radius-34: 34px;      /* large panel */
+  --radius-41: 41px;      /* filter group */
+  --radius-pill: 108px;   /* round icon buttons */
+}

@@ -1,0 +1,37 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --background-brand-tertiary: var(--brand-100); /* @kind color */
+  --backgrounds-primary: rgb(255,255,255); /* @kind color */
+  --brand-100: rgb(245,245,245); /* @kind color */
+  --brand-600: rgb(68,68,68); /* @kind color */
+  --colors-neutral-colors-neutral-1000: rgb(17,17,37); /* @kind color */
+  --colors-neutral-colors-neutral-50: rgb(255,255,255); /* @kind color */
+  --colors-neutral-colors-neutral-700: rgb(130,130,148); /* @kind color */
+  --colors-neutral-colors-neutral-800: rgb(92,92,111); /* @kind color */
+  --colors-neutral-colors-neutral-900: rgb(48,48,68); /* @kind color */
+  --colors-primary-colors-primary-300: rgb(230,217,254); /* @kind color */
+  --colors-primary-colors-primary-500: rgb(205,179,253); /* @kind color */
+  --colors-primary-colors-primary-600: rgb(193,160,253); /* @kind color */
+  --filter: "String value"; /* @kind other */
+  --spacing-spacing-16: 16;
+  --spacing-spacing-24: 24;
+  --spacing-spacing-32: 32;
+  --spacing-spacing-40: 40;
+  --spacing-spacing-48: 48;
+  --spacing-spacing-56: 56;
+  --spacing-spacing-64: 64;
+  --spacing-spacing-8: 8;
+  --spacing-spacing-96: 96;
+}
+
+:root[data-theme="dark"], .dark {
+  --background-brand-tertiary: var(--brand-600); /* @kind color */
+  --backgrounds-primary: rgb(0,0,0); /* @kind color */
+  --backgrounds-primary: rgb(0,0,0); /* @kind color */
+}
+
+:root[data-theme="light"], .light {
+  --backgrounds-primary: rgb(255,255,255); /* @kind color */
+}

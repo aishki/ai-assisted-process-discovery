@@ -1,0 +1,9 @@
+/* Shadows & rings measured in the source file. */
+:root {
+  --ring-card: inset 0 0 0 1px var(--border-card);
+  --ring-button: inset 0 0 0 1px var(--action-primary);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.1);
+  --shadow-tint: 0 8px 24px rgba(235,228,255,0.9608);
+}

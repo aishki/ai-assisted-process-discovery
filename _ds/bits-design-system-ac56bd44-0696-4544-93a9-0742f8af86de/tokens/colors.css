@@ -1,0 +1,86 @@
+/* Palette — Carelon / Elevance corporate brand sheet (uploads/branding.png)
+   plus the exact values used in the BITS Webpage 2.0 Figma file. */
+:root {
+  /* Primary */
+  --purple: #5009B5;              /* Pantone 2091 C — the brand colour, 569 uses */
+  --white: #FFFFFF;
+
+  /* Secondary */
+  --light-purple: #794CFF;        /* Pantone 2725 C */
+  --cyan: #44B8F3;                /* Pantone 298 C */
+  --turquoise: #00BBBA;           /* Pantone 2398 C */
+  --dark-purple: #2B1B49;         /* Pantone 2685 C */
+  --pale-purple: #EBE4FF;         /* 15% of Purple */
+  --pale-cyan: #E1EDFF;           /* not a tint */
+  --pale-turquoise: #D9F5F5;      /* 15% of Turquoise */
+  --light-gray: #F5F5F5;
+  --dark-gray: #231E33;           /* Pantone Black C — text only */
+
+  /* Digital-accessible text substitutes (brand sheet) */
+  --cyan-text: #0C7DB6;
+  --turquoise-text: #028283;
+
+  /* Purples measured in the BITS file */
+  --purple-900: #280559;          /* deep purple, headings on tint */
+  --purple-700: #5009B5;
+  --purple-600: #6F1DF4;          /* selected control fill */
+  --purple-500: #794CFF;
+  --primary-300: #E6D9FE;
+  --primary-500: #CDB3FD;
+  --primary-600: #C1A0FD;         /* pager dot */
+  --purple-050: #F3F2FF;
+  --purple-025: #F3ECFF;
+
+  /* Neutrals (Figma Variables + measured values) */
+  --neutral-50: #FFFFFF;
+  --neutral-100: #F5F5F5;
+  --neutral-150: #F1F1F1;
+  --neutral-300: #D9D9D9;
+  --neutral-350: #CBD2DC;
+  --neutral-400: #BEBFC3;
+  --neutral-500: #929299;
+  --neutral-700: #828294;
+  --neutral-800: #5C5C6F;
+  --neutral-900: #303044;
+  --neutral-1000: #111125;
+  --ink-333: #333333;
+
+  /* Utility */
+  --success: #449E3C;             /* measured in file */
+  --info: #0263FF;                /* measured in file */
+  --warning: #F2BC35;             /* Wellpoint guideline (design/SKILL.md) */
+  --error: #D20A36;               /* Wellpoint guideline (design/SKILL.md) */
+}
+
+/* Semantic aliases — prefer these in components. */
+:root {
+  --text-heading: var(--purple);
+  --text-body: var(--dark-gray);
+  --text-strong: var(--neutral-1000);
+  --text-muted: var(--neutral-800);
+  --text-subtle: var(--neutral-700);
+  --text-inverse: var(--white);
+  --text-on-dark-muted: rgba(35,30,51,0.5);
+
+  --surface-page: var(--white);
+  --surface-subtle: var(--light-gray);
+  --surface-tint: var(--pale-purple);
+  --surface-tint-strong: var(--primary-300);
+  --surface-dark: var(--dark-purple);
+  --surface-card: var(--white);
+
+  --border-card: var(--pale-purple);
+  --border-hairline: rgba(0,0,0,0.12);
+  --border-neutral: var(--neutral-350);
+
+  --action-primary: var(--purple);
+  --action-primary-hover: #3E0790;    /* derived: purple −15% lightness */
+  --action-primary-active: var(--purple-900);
+  --action-on-primary: var(--white);
+  --control-selected: var(--purple-600);
+  --control-unselected: rgba(60,60,67,0.18);
+  --focus-ring: var(--cyan-text);
+
+  --link: var(--purple);
+  --link-hover: var(--action-primary-hover);
+}

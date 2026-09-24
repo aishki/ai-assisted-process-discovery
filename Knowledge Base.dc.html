@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/colors.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/typography.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/radius.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/motion.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/tokens/base.css">
+<link rel="stylesheet" href="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/styles.css">
+<script src="_ds/bits-design-system-ac56bd44-0696-4544-93a9-0742f8af86de/_ds_bundle.js"></script>
+<style>body{margin:0;background:#FFFFFF;color:#231E33}a{color:#5009B5;text-decoration:none}a:hover{color:#3E0790}</style>
+</helmet>
+<div style="position: relative; min-height: 100vh; display: flex; flex-direction: column; background: #FFFFFF; font-family: var(--font-brand); color: #231E33">
+
+  <header style="position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 20px; height: 72px; padding: 0 28px; background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.12)">
+    <button onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 11px; border: none; border-radius: 22px; background: transparent; cursor: pointer" style-hover="background: #EBE4FF">
+      <span style="height: 2px; background: #5009B5; border-radius: 1px"></span>
+      <span style="height: 2px; background: #5009B5; border-radius: 1px"></span>
+      <span style="height: 2px; background: #5009B5; border-radius: 1px"></span>
+    </button>
+    <div style="display: flex; align-items: baseline; gap: 10px; white-space: nowrap">
+      <span style="font-weight: 600; font-size: 20px; letter-spacing: -0.01em; color: #5009B5">BITS</span>
+      <span style="font-weight: 500; font-size: 16px; color: #231E33">Knowledge Base</span>
+    </div>
+    <div style="flex: 1; display: flex; justify-content: center; min-width: 0">
+      <label style="display: flex; align-items: center; gap: 10px; width: 100%; max-width: 520px; height: 42px; padding: 0 18px; border-radius: 21px; background: #F5F5F5; box-shadow: inset 0 0 0 1px #EBE4FF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5009B5" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+        <input placeholder="Ask a question or search the knowledge base" style="flex: 1; min-width: 0; border: none; outline: none; background: transparent; font: 400 15px var(--font-brand); color: #231E33" />
+      </label>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px">
+      <x-import component-from-global-scope="BITSDesignSystem_ac56bd.PurpleButton" hint-size="auto,40px">New request</x-import>
+      <div style="width: 38px; height: 38px; border-radius: 50%; background: #EBE4FF; display: flex; align-items: center; justify-content: center; font: 600 14px var(--font-ui); color: #5009B5">IT</div>
+    </div>
+  </header>
+
+  <div ref="{{ gridRef }}" style="flex: 1; display: grid; grid-template-columns: {{ cols }}">
+
+    <aside style="display: flex; flex-direction: column; gap: 4px; padding: 24px 18px; background: #F5F5F5; border-right: 1px solid rgba(0,0,0,0.08)">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 8px 12px">
+        <span style="font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5009B5">Modules</span>
+        <span style="font: 500 12px var(--font-ui); color: rgba(35,30,51,0.6)">{{ moduleCount }}</span>
+      </div>
+      <sc-for list="{{ modules }}" as="m" hint-placeholder-count="11">
+        <div style="display: flex; flex-direction: column">
+          <button onClick="{{ m.onToggle }}" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 8px; border: none; border-radius: 10px; background: transparent; cursor: pointer; text-align: left; font-family: var(--font-brand)" style-hover="background: #EBE4FF">
+            <span style="width: 14px; font-size: 11px; color: {{ m.caretColor }}">{{ m.caret }}</span>
+            <span style="font-size: 15px; font-weight: {{ m.weight }}; color: {{ m.color }}">{{ m.title }}</span>
+          </button>
+          <sc-if value="{{ m.open }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 2px; margin: 2px 0 8px 15px; padding-left: 14px; border-left: 1px solid #D6CCF0">
+              <sc-for list="{{ m.children }}" as="c" hint-placeholder-count="3">
+                <button onClick="{{ c.onSelect }}" style="padding: 7px 10px; border: none; border-radius: 8px; background: {{ c.bg }}; cursor: pointer; text-align: left; font-family: var(--font-brand); font-size: 14px; font-weight: {{ c.weight }}; color: {{ c.color }}" style-hover="background: #EBE4FF">{{ c.title }}</button>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </aside>
+
+    <main style="display: flex; flex-direction: column; gap: 28px; padding: 32px 44px 56px; min-width: 0">
+      <sc-if value="{{ showBanner }}" hint-placeholder-val="{{ true }}">
+        <div style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; padding: 28px 32px; border-radius: 20px; background: #2B1B49; overflow: hidden">
+          <img src="assets/graphics/supergraphic-connection-1.svg" alt="" style="position: absolute; right: -180px; top: -140px; width: 720px; opacity: 0.45; pointer-events: none" />
+          <div style="position: relative; flex: 1 1 320px; display: flex; flex-direction: column; gap: 10px">
+            <span style="font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #C9A8FF">Before you request</span>
+            <span style="font-weight: 500; font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; color: #FFFFFF">Complete the four qualification checks first</span>
+            <span style="max-width: 560px; font-size: 15px; line-height: 1.5; color: #E6D9FE">Opportunity reference, project charter, named POC and project storyboard. Templates for each are in the library.</span>
+          </div>
+          <div style="position: relative; display: flex; gap: 10px; flex-wrap: wrap">
+            <x-import component-from-global-scope="BITSDesignSystem_ac56bd.PurpleButton" variant="inverse" on-click="{{ goChecklist }}" hint-size="auto,40px">Open checklist</x-import>
+            <button onClick="{{ hideBanner }}" aria-label="Dismiss" style="width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; background: transparent; color: #FFFFFF; font-size: 16px; cursor: pointer">✕</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 13px; color: rgba(35,30,51,0.6)">
+          <span>Knowledge base</span><span>/</span><span>{{ page.module }}</span><span>/</span><span style="color: #5009B5; font-weight: 500">{{ page.title }}</span>
+        </div>
+        <h1 style="margin: 0; font-weight: 500; font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; color: #5009B5">{{ page.title }}</h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--font-ui)">
+          <span style="padding: 5px 12px; border-radius: 20px; background: #EBE4FF; font-weight: 600; font-size: 12px; color: #5009B5">Owner · {{ page.owner }}</span>
+          <span style="padding: 5px 12px; border-radius: 20px; box-shadow: inset 0 0 0 1px #EBE4FF; font-weight: 500; font-size: 12px; color: #231E33">Reviewed {{ page.updated }}</span>
+        </div>
+        <p style="margin: 0; max-width: 760px; font-size: 18px; line-height: 1.6; letter-spacing: 0.01em; color: #231E33; text-wrap: pretty">{{ page.summary }}</p>
+      </div>
+
+      <sc-if value="{{ hasCards }}" hint-placeholder-val="{{ true }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+          <sc-for list="{{ page.cards }}" as="k" hint-placeholder-count="3">
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 15px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #EBE4FF">
+              <span style="font-weight: 600; font-size: 18px; letter-spacing: -0.01em; color: #231E33">{{ k.title }}</span>
+              <span style="font-size: 14px; line-height: 1.5; color: rgba(35,30,51,0.75)">{{ k.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="padding-bottom: 10px; font-weight: 600; font-size: 18px; color: #231E33">In this section</span>
+        <sc-for list="{{ page.resources }}" as="r" hint-placeholder-count="3">
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px 4px; border-top: 1px solid #EBE4FF">
+            <div style="width: 34px; height: 34px; flex: none; border-radius: 10px; background: #EBE4FF; display: flex; align-items: center; justify-content: center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5009B5" stroke-width="2"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v4h4"></path></svg>
+            </div>
+            <span style="flex: 1; font-size: 15px; color: #231E33">{{ r.title }}</span>
+            <span style="font: 500 12px var(--font-ui); color: rgba(35,30,51,0.6)">{{ r.kind }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; gap: 16px; padding-top: 20px; border-top: 1px solid #5009B5">
+        <button onClick="{{ goPrev }}" style="border: none; background: none; cursor: pointer; font: 600 14px var(--font-brand); color: #5009B5">← {{ prevTitle }}</button>
+        <button onClick="{{ goNext }}" style="border: none; background: none; cursor: pointer; font: 600 14px var(--font-brand); color: #5009B5">{{ nextTitle }} →</button>
+      </div>
+    </main>
+
+    <sc-if value="{{ showRightRail }}" hint-placeholder-val="{{ true }}">
+      <aside style="display: flex; flex-direction: column; gap: 28px; padding: 32px 24px; border-left: 1px solid rgba(0,0,0,0.08); border-top: 1px solid rgba(0,0,0,0.08); grid-column: {{ railSpan }}">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <span style="font-weight: 600; font-size: 16px; color: #231E33">Recently updated</span>
+          <sc-for list="{{ updates }}" as="u" hint-placeholder-count="3">
+            <div style="display: flex; flex-direction: column; gap: 3px">
+              <span style="font: 500 12px var(--font-ui); color: rgba(35,30,51,0.6)">{{ u.when }}</span>
+              <span style="font-size: 14px; line-height: 1.4; color: #231E33">{{ u.what }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 15px; box-shadow: inset 0 0 0 1px #EBE4FF">
+          <span style="font-weight: 600; font-size: 16px; color: #231E33">My requests</span>
+          <sc-for list="{{ requests }}" as="q" hint-placeholder-count="3">
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span style="font: 600 13px var(--font-ui); color: #231E33">{{ q.id }}</span>
+              <span style="margin-left: auto; padding: 3px 10px; border-radius: 20px; background: {{ q.bg }}; font: 600 11px var(--font-ui); color: {{ q.fg }}">{{ q.status }}</span>
+            </div>
+          </sc-for>
+          <a href="#" style="font-weight: 600; font-size: 13px">View all requests →</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 15px; background: #EBE4FF">
+          <span style="font-weight: 600; font-size: 16px; color: #5009B5">Ask the knowledge base</span>
+          <span style="font-size: 13px; line-height: 1.5; color: #231E33">Answers are drafts and link back to the source page.</span>
+          <input placeholder="Power Apps or web app?" style="height: 38px; padding: 0 14px; border: none; border-radius: 19px; background: #FFFFFF; font: 400 14px var(--font-brand); color: #231E33; outline: none" />
+        </div>
+      </aside>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeMenu }}" style="position: fixed; inset: 0; z-index: 20; background: rgba(35,30,51,0.5)"></div>
+    <nav style="position: fixed; top: 0; left: 0; bottom: 0; z-index: 21; width: 320px; display: flex; flex-direction: column; gap: 2px; padding: 20px 18px; background: #FFFFFF; box-shadow: var(--shadow-lg); overflow-y: auto">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.12)">
+        <span style="font-weight: 600; font-size: 20px; color: #5009B5">BITS</span>
+        <button onClick="{{ closeMenu }}" aria-label="Close menu" style="width: 40px; height: 40px; border: none; border-radius: 20px; background: #EBE4FF; color: #5009B5; font-size: 15px; cursor: pointer">✕</button>
+      </div>
+      <sc-for list="{{ menu }}" as="g" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 2px; padding-top: 16px">
+          <span style="padding: 0 10px 6px; font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(35,30,51,0.6)">{{ g.group }}</span>
+          <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+            <a href="#" style="display: flex; align-items: center; padding: 11px 10px; border-radius: 10px; background: {{ i.bg }}; font-size: 15px; font-weight: {{ i.weight }}; color: {{ i.color }}" style-hover="background: #EBE4FF">{{ i.label }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+      <span style="margin-top: auto; padding: 16px 10px 0; border-top: 1px solid #5009B5; font: 400 12px var(--font-ui); color: rgba(35,30,51,0.6)">© 2026 CGSPH. All rights reserved.</span>
+    </nav>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showRightRail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showBanner&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+const MODULES = [
+  { title: 'Start here', children: [
+    { title: 'Before you request checklist', owner: 'Isabel', updated: 'February 4, 2026', summary: 'Four checks must pass before the automation request opens: an identified opportunity, an uploaded project charter, a named POC and an uploaded project storyboard. Each yes needs evidence, so the gate cannot be clicked through.',
+      cards: [{ title: 'Opportunity identified', body: 'Reference to the logged opportunity is required.' }, { title: 'Project charter', body: 'Upload the signed charter using the library template.' }, { title: 'POC identified', body: 'Name the process owner who will answer follow-ups.' }, { title: 'Project storyboard', body: 'Upload the current-to-future process storyboard.' }],
+      resources: [{ title: 'Project charter template', kind: 'Template · .docx' }, { title: 'Storyboard template', kind: 'Template · .pptx' }, { title: 'What happens if a check fails', kind: 'Guide · 3 min' }] },
+    { title: 'Request process and timelines', owner: 'Adrian', updated: 'January 28, 2026', summary: 'How a request moves from draft to approved, who reviews it at each step, and how long each stage usually takes.',
+      cards: [{ title: 'Draft to submitted', body: 'The requester completes the form and AI interview.' }, { title: 'AI review', body: 'Readiness score and open questions are generated.' }, { title: 'ABA and manager review', body: 'Scope, priority and platform are decided.' }],
+      resources: [{ title: 'Status definitions', kind: 'Reference' }, { title: 'Typical review times', kind: 'Reference' }] } ] },
+  { title: 'Platform guides', children: [
+    { title: 'Power Apps', owner: 'Isabel', updated: 'February 4, 2026', summary: 'Power Apps suits internal tools with a known user group, data held in SharePoint or Dataverse, and approved connectors. It is the fastest route for forms, trackers and approval flows.',
+      cards: [{ title: 'When it fits', body: 'Under 500 users, standard connectors, form-driven workflows.' }, { title: 'Limits', body: 'Delegation limits on large lists; premium connectors need licensing.' }, { title: 'Typical build', body: 'Canvas app with Power Automate flows for approvals.' }],
+      resources: [{ title: 'Choosing between Power Apps and a web app', kind: 'Guide · 6 min' }, { title: 'Licensing and approved connectors', kind: 'Reference' }, { title: 'Power Apps screen template', kind: 'Template · .msapp' }] },
+    { title: 'Web app', owner: 'Adrian', updated: 'January 28, 2026', summary: 'Web apps suit tools with many users, complex logic or integrations outside the Power Platform. Built and hosted by BITS on the approved stack.',
+      cards: [{ title: 'When it fits', body: 'Large user base, custom logic, external data sources.' }, { title: 'Limits', body: 'Longer build time and a hosting review before release.' }, { title: 'Typical build', body: 'React front end with a REST API and PostgreSQL.' }],
+      resources: [{ title: 'Web app development flow, v2', kind: 'Guide · 8 min' }, { title: 'Hosting and deployment', kind: 'Reference' }] },
+    { title: 'Desktop app', owner: 'Adrian', updated: 'December 12, 2025', summary: 'Desktop apps suit tasks tied to local files or legacy systems that cannot be reached from the browser.',
+      cards: [{ title: 'When it fits', body: 'Local file processing, legacy system automation.' }, { title: 'Limits', body: 'Needs install and update management per machine.' }],
+      resources: [{ title: 'Desktop packaging checklist', kind: 'Reference' }] },
+    { title: 'Selection criteria', owner: 'Isabel · Adrian', updated: 'February 4, 2026', summary: 'How BITS chooses a platform: number of users, data sources, integration needs, complexity and support model.',
+      cards: [{ title: 'Users', body: 'Who uses it and how many.' }, { title: 'Data', body: 'Where it lives and how sensitive it is.' }, { title: 'Complexity', body: 'Logic, integrations and scale.' }],
+      resources: [{ title: 'Platform decision matrix', kind: 'Template · .xlsx' }] } ] },
+  { title: 'Development flows', children: [{ title: 'Power Apps flow' }, { title: 'Web app flow' }, { title: 'UAT and release' }] },
+  { title: 'Requirements and discovery', children: [{ title: 'Discovery categories' }, { title: 'Writing good requirements' }] },
+  { title: 'Standards and conventions', children: [{ title: 'Naming conventions' }, { title: 'Code review standards' }] },
+  { title: 'Testing and UAT', children: [{ title: 'Test planning' }, { title: 'UAT sign-off' }] },
+  { title: 'Support and maintenance', children: [{ title: 'Support model' }, { title: 'Change requests' }] },
+  { title: 'Frameworks and tech stack', children: [{ title: 'Approved stack' }, { title: 'Libraries and tools' }] },
+  { title: 'Architecture and patterns', children: [{ title: 'Solution patterns' }, { title: 'Integration patterns' }] },
+  { title: 'Environments and licensing', children: [{ title: 'Environments' }, { title: 'Licensing' }, { title: 'Approved connectors' }] },
+  { title: 'Security and data handling', children: [{ title: 'Data classification' }, { title: 'Access and permissions' }] },
+  { title: 'Templates library', children: [{ title: 'Charter and storyboard' }, { title: 'UAT checklist' }] },
+  { title: 'Past projects portfolio', children: [{ title: 'By platform' }, { title: 'By department' }] },
+  { title: 'Developer directory', children: [{ title: 'BITS developers' }, { title: 'Skills and availability' }] },
+  { title: 'FAQs and glossary', children: [{ title: 'FAQs' }, { title: 'Glossary' }] },
+];
+const FLAT = [];
+MODULES.forEach((m, mi) => m.children.forEach((c, ci) => FLAT.push({ mi, ci })));
+const STATUS = { 'AI review': ['#5009B5', '#FFFFFF'], 'Needs info': ['#F2BC35', '#231E33'], 'Draft': ['#EBE4FF', '#5009B5'] };
+
+class Component extends DCLogic {
+  state = { open: { 1: true }, sel: { mi: 1, ci: 0 }, banner: true, menu: false, w: 1440 };
+  gridRef = React.createRef();
+  componentDidMount() {
+    this.ro = new ResizeObserver(([e]) => this.setState({ w: e.contentRect.width }));
+    if (this.gridRef.current) this.ro.observe(this.gridRef.current);
+  }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); }
+  select(mi, ci) { this.setState(s => ({ sel: { mi, ci }, open: { ...s.open, [mi]: true } })); }
+  step(d) {
+    const i = FLAT.findIndex(f => f.mi === this.state.sel.mi && f.ci === this.state.sel.ci);
+    const n = FLAT[(i + d + FLAT.length) % FLAT.length];
+    this.select(n.mi, n.ci);
+  }
+  renderVals() {
+    const { open, sel, banner, menu } = this.state;
+    const showRightRail = this.props.showRightRail ?? true;
+    const mod = MODULES[sel.mi], ch = mod.children[sel.ci];
+    const page = {
+      module: mod.title, title: ch.title,
+      owner: ch.owner || 'BITS Automation Team', updated: ch.updated || 'January 2026',
+      summary: ch.summary || `${ch.title} is part of ${mod.title}. Content for this page is being gathered by the module owner.`,
+      cards: ch.cards || [], resources: ch.resources || [{ title: `${ch.title} overview`, kind: 'Guide' }],
+    };
+    const i = FLAT.findIndex(f => f.mi === sel.mi && f.ci === sel.ci);
+    const t = f => MODULES[f.mi].children[f.ci].title;
+    const menuItems = [
+      { group: 'Everyone', items: ['Home', 'Knowledge base', 'Before you request', 'Templates library', 'Past projects portfolio', 'FAQs and glossary'] },
+      { group: 'My work', items: ['Request an automation', 'My requests', 'Requests I am POC on', 'Saved pages'] },
+      { group: 'BITS team', items: ['Request queue', 'Module ownership and reviews'] },
+    ].map(g => ({ group: g.group, items: g.items.map(l => { const a = l === 'Knowledge base'; return { label: l, bg: a ? '#EBE4FF' : 'transparent', color: a ? '#5009B5' : '#231E33', weight: a ? 600 : 400 }; }) }));
+    return {
+      moduleCount: MODULES.length,
+      modules: MODULES.map((m, mi) => {
+        const active = mi === sel.mi, isOpen = !!open[mi];
+        return {
+          title: m.title, open: isOpen, caret: isOpen ? '▾' : '▸',
+          caretColor: active ? '#5009B5' : 'rgba(35,30,51,0.5)', color: active ? '#5009B5' : '#231E33', weight: active ? 600 : 400,
+          onToggle: () => this.setState(s => ({ open: { ...s.open, [mi]: !s.open[mi] } })),
+          children: m.children.map((c, ci) => {
+            const on = active && ci === sel.ci;
+            return { title: c.title, bg: on ? '#FFFFFF' : 'transparent', color: on ? '#5009B5' : '#231E33', weight: on ? 600 : 400, onSelect: () => this.select(mi, ci) };
+          }),
+        };
+      }),
+      page, hasCards: page.cards.length > 0,
+      prevTitle: t(FLAT[(i - 1 + FLAT.length) % FLAT.length]), nextTitle: t(FLAT[(i + 1) % FLAT.length]),
+      goPrev: () => this.step(-1), goNext: () => this.step(1),
+      showBanner: banner && (this.props.showBanner ?? true), hideBanner: () => this.setState({ banner: false }),
+      goChecklist: () => this.select(0, 0),
+      showRightRail, gridRef: this.gridRef,
+      cols: (() => { const w = this.state.w, side = w < 820 ? 240 : 288; return w >= 1200 && showRightRail ? `${side}px minmax(0, 1fr) 300px` : `${side}px minmax(0, 1fr)`; })(),
+      railSpan: this.state.w >= 1200 ? 'auto' : '2 / 3',
+      updates: [{ when: '2 days ago', what: 'Approved connectors list revised' }, { when: 'Last week', what: 'New UAT checklist template added' }, { when: 'January 28, 2026', what: 'Web app development flow, v2' }],
+      requests: [['ATT-014', 'AI review'], ['ATT-011', 'Needs info'], ['ATT-009', 'Draft']].map(([id, st]) => ({ id, status: st, bg: STATUS[st][0], fg: STATUS[st][1] })),
+      menu: menuItems, menuOpen: menu,
+      openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

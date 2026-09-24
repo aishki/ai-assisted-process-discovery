@@ -1,0 +1,44 @@
+/* Type scale — sizes as measured in the BITS Figma file.
+   Desktop heading ladder from the Wellpoint Digital Guidelines (attached codebase). */
+:root {
+  --fs-12: 12px;  --lh-12: 1.5; /* @kind other */
+  --fs-14: 14px;  --lh-14: 1.5; /* @kind other */
+  --fs-15: 15px;  --lh-15: 1.5; /* @kind other */
+  --fs-16: 16px;  --lh-16: 1.5; /* @kind other */
+  --fs-18: 18px;  --lh-18: 26px; /* @kind other */
+  --fs-20: 20px;  --lh-20: 30px; /* @kind other */
+  --fs-24: 24px;  --lh-24: 1.15; /* @kind other */
+  --fs-32: 32px;  --lh-32: 1; /* @kind other */
+  --fs-36: 36px;  --lh-36: 1.26; /* @kind other */
+  --fs-40: 40px;  --lh-40: 1; /* @kind other */
+  --fs-48: 48px;  --lh-48: 1.15; /* @kind other */
+  --fs-55: 55px;  --lh-55: 1.2; /* @kind other */
+  --fs-64: 64px;  --lh-64: 1; /* @kind other */
+  --fs-80: 80px;  --lh-80: 1; /* @kind other */
+
+  /* weights available in the brand face */
+  --fw-light: 300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+
+  /* tracking values used in the file */
+  --tracking-tight: -0.02em; /* @kind other */
+  --tracking-normal: 0;
+  --tracking-loose: 0.01em; /* @kind other */
+  --tracking-wide: 0.005em; /* @kind other */
+
+  /* named roles */
+  --type-hero: var(--fw-medium) var(--fs-64)/var(--lh-64) var(--font-brand); /* @kind font */
+  --type-eyebrow: var(--fw-medium) var(--fs-32)/var(--lh-32) var(--font-brand); /* @kind font */
+  --type-section-title: var(--fw-medium) var(--fs-36)/var(--lh-36) var(--font-brand); /* @kind font */
+  --type-card-title: var(--fw-medium) var(--fs-24)/var(--lh-24) var(--font-brand); /* @kind font */
+  --type-nav: var(--fw-semibold) var(--fs-20)/1 var(--font-brand); /* @kind font */
+  --type-body-lead: var(--fw-medium) var(--fs-20)/var(--lh-20) var(--font-brand); /* @kind font */
+  --type-body: var(--fw-regular) var(--fs-20)/var(--lh-20) var(--font-brand); /* @kind font */
+  --type-body-sm: var(--fw-regular) var(--fs-14)/var(--lh-14) var(--font-brand); /* @kind font */
+  --type-caption: var(--fw-regular) var(--fs-12)/var(--lh-12) var(--font-brand); /* @kind font */
+  --type-button: var(--fw-semibold) var(--fs-16)/1 var(--font-brand); /* @kind font */
+  --type-stat: var(--fw-semibold) var(--fs-64)/1.2 var(--font-ui); /* @kind font */
+}

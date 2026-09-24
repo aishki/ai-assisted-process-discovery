@@ -1,0 +1,23 @@
+/* Spacing — the Figma Variable scale, plus layout constants measured in the file. */
+:root {
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-15: 15px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-25: 25px;
+  --space-31: 31px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-96: 96px;
+
+  --page-width: 1440px; /* @kind spacing */         /* design frame */
+  --page-gutter: 96px;          /* footer / paragraph sections */
+  --page-gutter-wide: 100px;    /* news hero */
+  --page-gutter-tool: 70px;     /* tool detail template */
+  --navbar-height: 81px; /* @kind spacing */
+  --grid-gap: 24px;
+}

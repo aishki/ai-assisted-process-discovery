@@ -1,0 +1,18 @@
+/* Webfonts.
+   The brand face is "Elevance Sans" (used 560+ times in the BITS Figma file). No real
+   binaries were supplied — design/assets/fonts/ holds 211-byte AppleDouble stubs — so no
+   @font-face can be declared yet and the system fallback stack renders in its place.
+   Drop real ElevanceSans-*.woff2 into assets/fonts/ and add the @font-face block from
+   guidelines/typography-notes.md; nothing else needs to change.
+   Inter, Poppins and Geist are genuinely used by the source file and are loaded below. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600&family=Geist:wght@400..800&display=swap");
+
+:root {
+  /* brand face — awaiting real font files */
+  --font-brand: "Elevance Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* UI face used for stats, tertiary buttons and table chrome in the source file */
+  --font-ui: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* secondary faces present in the source file */
+  --font-alt: Poppins, var(--font-ui);
+  --font-display-alt: Geist, var(--font-ui);
+}
