@@ -41,8 +41,8 @@ export const CHECKS: CheckConfig[] = [
     description: "Name the process owner who will answer follow-up questions.",
     kind: "text",
     placeholder: "Full name and email",
-    template: "guide to choosing a POC",
-    templateHref: kbPageHref("start-here", "choosing-a-poc"),
+    template: "Before you request checklist",
+    templateHref: CHECKLIST_HREF,
   },
 ];
 
