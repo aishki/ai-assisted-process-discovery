@@ -136,6 +136,11 @@ export function QualificationStep({ checks, onChange, onContinue }: Props) {
                   <p>
                     No problem. Use the <strong>{c.template}</strong>, then come back. Your draft is saved.
                   </p>
+                  {c.action && (
+                    <a href={c.action.href} target="_blank" rel="noopener noreferrer">
+                      {c.action.label} ↗<span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  )}
                   <Link href={c.templateHref}>Open in knowledge base →</Link>
                 </div>
               )}

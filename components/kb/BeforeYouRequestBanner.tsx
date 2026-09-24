@@ -25,7 +25,7 @@ export function BeforeYouRequestBanner() {
           Complete the three qualification checks first
         </h2>
         <p className={styles.body}>
-          Approved Brainwave submission, project charter and named POC. Templates for each are in the library.
+          Brainwave submission at Project status, project charter and named POC. Templates for each are in the library.
         </p>
       </div>
       <div className={styles.actions}>

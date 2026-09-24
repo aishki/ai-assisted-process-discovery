@@ -1,4 +1,4 @@
-import { CHECKLIST_HREF, kbPageHref, TEMPLATES_HREF } from "@/lib/routes";
+import { BRAINWAVE_HREF, CHECKLIST_HREF, kbPageHref, TEMPLATES_HREF } from "@/lib/routes";
 import type { CheckState, FieldKey, Sensitivity } from "./types";
 
 export type CheckConfig = {
@@ -8,6 +8,8 @@ export type CheckConfig = {
   /** Template or guide offered on "Not yet". */
   template: string;
   templateHref: string;
+  /** External place to act on the check, offered on "Not yet" before the template. */
+  action?: { label: string; href: string };
   placeholder?: string;
   accept?: string;
   fileHint?: string;
@@ -15,12 +17,13 @@ export type CheckConfig = {
 
 export const CHECKS: CheckConfig[] = [
   {
-    title: "Approved Brainwave submission",
+    title: "Brainwave submission at Project status",
     description:
-      "Upload a screenshot of your approved Brainwave submission. Every idea must be submitted and approved in Brainwave before development starts.",
+      "Upload a screenshot showing your Brainwave submission at Project status. It reaches Project after Submitted, IC Review, Champion Review and BITS Review.",
     kind: "file",
     template: "Brainwave submission guide",
     templateHref: kbPageHref("start-here", "brainwave-submission-guide"),
+    action: { label: "Open Brainwave", href: BRAINWAVE_HREF },
     accept: ".png,.jpg,.jpeg,image/png,image/jpeg",
     fileHint: "Choose a screenshot (.png, .jpg)",
   },

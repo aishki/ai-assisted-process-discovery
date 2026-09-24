@@ -1,6 +1,6 @@
 export type KbCard = { title: string; body: string };
 
-/** `link` is "module-slug/page-slug" of the knowledge base page the resource lives on. */
+/** `link` is "module-slug/page-slug" of the knowledge base page the resource lives on, or an https URL. */
 export type KbResourceSource = { title: string; kind: string; link?: string };
 
 export type KbPageSource = {

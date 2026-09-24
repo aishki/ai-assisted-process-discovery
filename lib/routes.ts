@@ -4,6 +4,8 @@ export const kbPageHref = (moduleSlug: string, pageSlug: string) =>
 export const KB_HOME_HREF = "/knowledge-base";
 export const CHECKLIST_HREF = kbPageHref("start-here", "before-you-request-checklist");
 export const TEMPLATES_HREF = kbPageHref("templates-library", "project-charter");
+/** Where ideas are submitted and tracked through review. */
+export const BRAINWAVE_HREF = "https://teamcgs.io/brainwave";
 export const kbSearchHref = (q: string) => `/knowledge-base/search?q=${encodeURIComponent(q)}`;
 
 /** id of the Ask the knowledge base input, so other pages can link straight to it. */

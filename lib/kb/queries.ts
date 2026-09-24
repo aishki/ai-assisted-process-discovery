@@ -36,9 +36,10 @@ const FLAT: KbPageLink[] = TREE.flatMap((m) =>
 
 export const DEFAULT_PAGE = { moduleSlug: "platform-guides", pageSlug: "power-apps" };
 
-/** Resolves a "module/page" link, or null if that page does not exist. */
+/** Resolves a "module/page" link or an https URL, or null if that page does not exist. */
 function resolveLink(link: string | undefined): string | null {
   if (!link) return null;
+  if (link.startsWith("https://")) return link;
   const [m, p] = link.split("/");
   return FLAT.some((f) => f.moduleSlug === m && f.pageSlug === p) ? kbPageHref(m, p) : null;
 }
