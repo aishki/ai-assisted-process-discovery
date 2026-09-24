@@ -1,0 +1,76 @@
+.banner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 28px;
+  padding: 28px 32px;
+  border-radius: var(--radius-20);
+  background: var(--dark-purple);
+  overflow: hidden;
+}
+
+.graphic {
+  position: absolute;
+  right: -180px;
+  top: -140px;
+  width: 720px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eyebrow {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tint-eyebrow);
+}
+
+.headline {
+  margin: 0;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.body {
+  margin: 0;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--primary-300);
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dismiss {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-standard);
+}
+
+.dismiss:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
