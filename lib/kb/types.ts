@@ -4,7 +4,6 @@ export type KbResource = { title: string; kind: string };
 
 export type KbPageSource = {
   title: string;
-  owner?: string;
   updated?: string;
   summary?: string;
   cards?: KbCard[];
@@ -28,7 +27,6 @@ export type KbPage = {
   moduleTitle: string;
   slug: string;
   title: string;
-  owner: string;
   updated: string;
   summary: string;
   cards: KbCard[];

@@ -44,7 +44,6 @@ export async function getPage(moduleSlug: string, pageSlug: string): Promise<KbP
     moduleTitle: mod.title,
     slug: pageSlug,
     title: ch.title,
-    owner: ch.owner ?? "BITS Automation Team",
     updated: ch.updated ?? "January 2026",
     summary:
       ch.summary ??

@@ -34,21 +34,11 @@
   font-family: var(--font-ui);
 }
 
-.ownerChip,
 .reviewedChip {
   padding: 5px 12px;
   border-radius: var(--radius-20);
-  font-size: 12px;
-}
-
-.ownerChip {
-  background: var(--pale-purple);
-  font-weight: 600;
-  color: var(--purple);
-}
-
-.reviewedChip {
   box-shadow: var(--ring-card);
+  font-size: 12px;
   font-weight: 500;
   color: var(--dark-gray);
 }

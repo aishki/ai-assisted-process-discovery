@@ -40,7 +40,6 @@ export default async function KnowledgeBasePage({ params }: Props) {
         </nav>
         <h1 className={styles.title}>{page.title}</h1>
         <div className={styles.chips}>
-          <span className={styles.ownerChip}>Owner · {page.owner}</span>
           <span className={styles.reviewedChip}>Reviewed {page.updated}</span>
         </div>
         <p className={styles.summary}>{page.summary}</p>
