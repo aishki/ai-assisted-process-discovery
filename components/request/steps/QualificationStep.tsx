@@ -149,7 +149,7 @@ export function QualificationStep({ checks, onChange, onContinue }: Props) {
           Continue to project details
         </PurpleButton>
         <span className={styles.hint} aria-live="polite">
-          {allPassed ? "All four checks passed" : `${passed} of ${CHECKS.length} checks have evidence`}
+          {allPassed ? "All three checks passed" : `${passed} of ${CHECKS.length} checks have evidence`}
         </span>
       </div>
     </>

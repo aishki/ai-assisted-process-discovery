@@ -22,11 +22,10 @@ export function BeforeYouRequestBanner() {
       <div className={styles.copy}>
         <span className={styles.eyebrow}>Before you request</span>
         <h2 id="kb-banner-title" className={styles.headline}>
-          Complete the four qualification checks first
+          Complete the three qualification checks first
         </h2>
         <p className={styles.body}>
-          Approved Brainwave submission, project charter, named POC and project storyboard. Templates for each are in
-          the library.
+          Approved Brainwave submission, project charter and named POC. Templates for each are in the library.
         </p>
       </div>
       <div className={styles.actions}>

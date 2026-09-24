@@ -86,7 +86,7 @@ export async function interviewTurn(turn: InterviewTurnRequest): Promise<Intervi
     return {
       messages: [
         {
-          text: "Hi — I have read your charter and storyboard. I will ask six short questions where the details are thin. Answer in your own words, and flag anything you are unsure of for the ABA.",
+          text: "Hi — I have read your charter. I will ask six short questions where the details are thin. Answer in your own words, and flag anything you are unsure of for the ABA.",
         },
         ask(0),
       ],

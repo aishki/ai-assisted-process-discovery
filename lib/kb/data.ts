@@ -6,9 +6,9 @@ import type { KbModuleSource, KbRequest, KbUpdateSource } from "./types";
 // unconfirmed filler modules — confirm them with the team.
 export const MODULES: KbModuleSource[] = [
   { title: "Start here", children: [
-    { title: "Before you request checklist", updated: "February 4, 2026", summary: "Four checks must pass before the automation request opens: an approved Brainwave submission, an uploaded project charter, a named POC and an uploaded project storyboard. Each yes needs evidence, so the gate cannot be clicked through.",
-      cards: [{ title: "Approved Brainwave submission", body: "Upload a screenshot showing the idea was approved in Brainwave." }, { title: "Project charter", body: "Upload the signed charter using the library template." }, { title: "POC identified", body: "Name the process owner who will answer follow-ups." }, { title: "Project storyboard", body: "Upload the current-to-future process storyboard." }],
-      resources: [{ title: "Project charter template", kind: "Template · .docx", link: "templates-library/charter-and-storyboard" }, { title: "Storyboard template", kind: "Template · .pptx", link: "templates-library/charter-and-storyboard" }, { title: "What happens if a check fails", kind: "Guide · 3 min", link: "start-here/request-process-and-timelines" }] },
+    { title: "Before you request checklist", updated: "February 4, 2026", summary: "Three checks must pass before the automation request opens: an approved Brainwave submission, an uploaded project charter and a named POC. Each yes needs evidence, so the gate cannot be clicked through.",
+      cards: [{ title: "Approved Brainwave submission", body: "Upload a screenshot showing the idea was approved in Brainwave." }, { title: "Project charter", body: "Upload the signed charter using the library template." }, { title: "POC identified", body: "Name the process owner who will answer follow-ups." }],
+      resources: [{ title: "Project charter template", kind: "Template · .docx", link: "templates-library/project-charter" }, { title: "What happens if a check fails", kind: "Guide · 3 min", link: "start-here/request-process-and-timelines" }] },
     { title: "Brainwave submission guide", updated: "February 4, 2026", summary: "Every idea must be submitted to and approved in Brainwave before development starts. This guide covers how to submit, what reviewers look for, and how to capture the approval screenshot the request form asks for." },
     { title: "Choosing a POC", updated: "February 4, 2026", summary: "The POC is the process owner who answers follow-up questions during review. Pick someone who runs the process day to day and can decide on exceptions, and include their email address in the request." },
     { title: "Request process and timelines", updated: "January 28, 2026", summary: "How a request moves from draft to approved, who reviews it at each step, and how long each stage usually takes.",
@@ -38,7 +38,7 @@ export const MODULES: KbModuleSource[] = [
   { title: "Architecture and patterns", children: [{ title: "Solution patterns" }, { title: "Integration patterns" }] },
   { title: "Environments and licensing", children: [{ title: "Environments" }, { title: "Licensing" }, { title: "Approved connectors" }] },
   { title: "Security and data handling", children: [{ title: "Data classification" }, { title: "Access and permissions" }] },
-  { title: "Templates library", children: [{ title: "Charter and storyboard" }, { title: "UAT checklist" }] },
+  { title: "Templates library", children: [{ title: "Project charter" }, { title: "UAT checklist" }] },
   { title: "Past projects portfolio", children: [{ title: "By platform" }, { title: "By department" }] },
   { title: "Developer directory", children: [{ title: "BITS developers" }, { title: "Skills and availability" }] },
   { title: "FAQs and glossary", children: [{ title: "FAQs" }, { title: "Glossary" }] },

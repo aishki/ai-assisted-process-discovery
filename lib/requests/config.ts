@@ -41,15 +41,6 @@ export const CHECKS: CheckConfig[] = [
     template: "guide to choosing a POC",
     templateHref: kbPageHref("start-here", "choosing-a-poc"),
   },
-  {
-    title: "Project storyboard",
-    description: "Upload the current-to-future process storyboard.",
-    kind: "file",
-    template: "storyboard template",
-    templateHref: TEMPLATES_HREF,
-    accept: ".docx,.pdf,.pptx",
-    fileHint: "Choose a file (.docx, .pdf, .pptx)",
-  },
 ];
 
 export const CHARTER_CHECK = 1;
@@ -94,7 +85,7 @@ export const TOPICS = [
 export const FOLLOW_UP_THRESHOLD = 40;
 
 export const STEPS = [
-  { title: "Qualification", sub: "Four checks with evidence" },
+  { title: "Qualification", sub: "Three checks with evidence" },
   { title: "Project details", sub: "Pre-filled from your charter" },
   { title: "AI interview", sub: "Follow-ups on thin answers" },
   { title: "Review and submit", sub: "Readiness and platform" },
@@ -103,7 +94,7 @@ export const STEPS = [
 export const TIPS = [
   {
     title: "Why evidence?",
-    body: "A yes without the charter or storyboard is how requests arrive premature. Attaching them here also lets AI pre-fill the next step.",
+    body: "A yes without the charter is how requests arrive premature. Attaching it here also lets AI pre-fill the next step.",
   },
   {
     title: "Check the pre-fill",
