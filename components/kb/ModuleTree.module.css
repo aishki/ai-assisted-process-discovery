@@ -1,0 +1,123 @@
+.tree {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 24px 18px;
+  background: var(--light-gray);
+  border-right: 1px solid var(--border-soft);
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 12px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.count {
+  font: 500 12px var(--font-ui);
+  color: var(--text-muted);
+}
+
+.module {
+  display: flex;
+  flex-direction: column;
+}
+
+.moduleButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 8px;
+  border: none;
+  border-radius: var(--radius-10);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-brand);
+  transition: background var(--duration-base) var(--ease-standard);
+}
+
+.moduleButton:hover {
+  background: var(--pale-purple);
+}
+
+.caret {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  color: rgba(35, 30, 51, 0.5);
+}
+
+.caretOpen svg {
+  transform: rotate(90deg);
+}
+
+.moduleTitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--dark-gray);
+}
+
+.moduleActive .caret,
+.moduleActive .moduleTitle {
+  color: var(--purple);
+}
+
+.moduleActive .moduleTitle {
+  font-weight: 600;
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 2px 0 8px 15px;
+  padding: 0 0 0 14px;
+  border-left: 1px solid var(--tint-rule);
+  list-style: none;
+}
+
+.child {
+  display: block;
+  padding: 7px 10px;
+  border-radius: var(--radius-8);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dark-gray);
+  transition:
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.child:hover {
+  background: var(--pale-purple);
+  color: var(--dark-gray);
+}
+
+.childSelected,
+.childSelected:hover {
+  background: var(--white);
+  font-weight: 600;
+  color: var(--purple);
+}
+
+/* When the rail wraps under main, keep the sidebar's grey running down both rows. */
+@media (max-width: 1199.98px) {
+  .tree {
+    grid-row: span 2;
+  }
+}

@@ -1,0 +1,132 @@
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 24px;
+  border-left: 1px solid var(--border-soft);
+  min-width: 0;
+}
+
+.heading {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--dark-gray);
+}
+
+.updates {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.update {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.when {
+  font: 500 12px var(--font-ui);
+  color: var(--text-muted);
+}
+
+.what {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--dark-gray);
+}
+
+.requests {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--radius-15);
+  box-shadow: var(--ring-card);
+}
+
+.request {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.requestId {
+  font: 600 13px var(--font-ui);
+  color: var(--dark-gray);
+}
+
+.status {
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: var(--radius-20);
+  font: 600 11px var(--font-ui);
+}
+
+.statusReview {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.statusNeedsInfo {
+  background: var(--warning);
+  color: var(--dark-gray);
+}
+
+.statusDraft {
+  background: var(--pale-purple);
+  color: var(--purple);
+}
+
+.viewAll {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.ask {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: var(--radius-15);
+  background: var(--pale-purple);
+}
+
+.askTitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--purple);
+}
+
+.askNote {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--dark-gray);
+}
+
+.askInput {
+  height: 38px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 19px;
+  background: var(--white);
+  font: 400 14px var(--font-brand);
+  color: var(--dark-gray);
+  outline: none;
+}
+
+.askInput:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Below 1200px the rail wraps under main, in column 2. */
+@media (max-width: 1199.98px) {
+  .rail {
+    grid-column: 2 / 3;
+    border-top: 1px solid var(--border-soft);
+  }
+}

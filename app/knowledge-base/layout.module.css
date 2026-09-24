@@ -1,0 +1,34 @@
+.shell {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-page);
+}
+
+/* ≥1200: sidebar | main | rail. Below: rail wraps under main in column 2. */
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 288px minmax(0, 1fr) 300px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 44px 56px;
+  min-width: 0;
+}
+
+@media (max-width: 1199.98px) {
+  .grid {
+    grid-template-columns: 288px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 819.98px) {
+  .grid {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+}
