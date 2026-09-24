@@ -1,0 +1,39 @@
+.page {
+  height: 100vh;
+  background: #07040F;
+}
+
+.loader {
+  height: 100%;
+}
+
+.bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font: 14px system-ui, sans-serif;
+}
+
+.bar button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #794CFF;
+  background: #07040F;
+  color: #E6D9FE;
+  font: inherit;
+  cursor: pointer;
+}
+
+.bar button:hover,
+.bar button[aria-pressed="true"] {
+  background: #2B1B49;
+}
+
+.log {
+  color: #C1A0FD;
+}
