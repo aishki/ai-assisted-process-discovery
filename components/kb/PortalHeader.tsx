@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
+import { Avatar, HeaderActions, HeaderBar, Wordmark } from "@/components/layout/HeaderBar";
 import { PurpleButton } from "@/components/ui/PurpleButton";
 import type { KbSearchEntry } from "@/lib/kb/types";
 import { KB_HOME_HREF, NEW_REQUEST_HREF, PROFILE_HREF } from "@/lib/routes";
@@ -20,7 +20,7 @@ export function PortalHeader({ initials, searchIndex }: Props) {
 
   return (
     <>
-      <header className={styles.header}>
+      <HeaderBar>
         <button
           type="button"
           className={styles.hamburger}
@@ -34,25 +34,15 @@ export function PortalHeader({ initials, searchIndex }: Props) {
           <span />
         </button>
 
-        <Link href={KB_HOME_HREF} className={styles.wordmark}>
-          <span className={styles.brand}>BITS</span>
-          <span className={styles.product}>{inKnowledgeBase ? "Knowledge Base" : "Automation Portal"}</span>
-        </Link>
+        <Wordmark product={inKnowledgeBase ? "Knowledge Base" : "Automation Portal"} href={KB_HOME_HREF} />
 
         <SearchBox index={searchIndex} />
 
-        <div className={styles.actions}>
+        <HeaderActions>
           <PurpleButton href={NEW_REQUEST_HREF}>New request</PurpleButton>
-          <Link
-            href={PROFILE_HREF}
-            className={styles.avatar}
-            aria-label="Your profile"
-            aria-current={pathname === PROFILE_HREF ? "page" : undefined}
-          >
-            {initials}
-          </Link>
-        </div>
-      </header>
+          <Avatar initials={initials} current={pathname === PROFILE_HREF} />
+        </HeaderActions>
+      </HeaderBar>
 
       <MenuDrawer open={menuOpen} onClose={closeMenu} />
     </>

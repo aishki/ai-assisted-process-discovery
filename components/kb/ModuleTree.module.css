@@ -3,9 +3,6 @@
   flex-direction: column;
   gap: 4px;
   padding: 24px 18px;
-  background: var(--light-gray);
-  border-right: 1px solid var(--border-soft);
-  min-width: 0;
 }
 
 .head {
@@ -115,9 +112,3 @@
   color: var(--purple);
 }
 
-/* When the rail wraps under main, keep the sidebar's grey running down both rows. */
-@media (max-width: 1199.98px) {
-  .tree {
-    grid-row: span 2;
-  }
-}

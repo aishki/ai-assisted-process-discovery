@@ -1,0 +1,78 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 72px;
+  padding: 0 28px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+  border-radius: 6px;
+}
+
+.linked:hover .product {
+  color: var(--purple);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--purple);
+}
+
+.product {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dark-gray);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--pale-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 14px var(--font-ui);
+  color: var(--purple);
+  transition:
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.avatar:hover,
+.avatar[aria-current="page"] {
+  background: var(--purple);
+  color: var(--white);
+}
+
+@media (max-width: 819.98px) {
+  .header {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .product {
+    display: none;
+  }
+}

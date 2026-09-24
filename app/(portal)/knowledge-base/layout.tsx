@@ -1,7 +1,7 @@
 import { ModuleTree } from "@/components/kb/ModuleTree";
 import { RightRail } from "@/components/kb/RightRail";
+import { ThreeColumnLayout } from "@/components/layout/ThreeColumnLayout";
 import { getModules, getMyRequests, getRecentUpdates } from "@/lib/kb/queries";
-import styles from "./layout.module.css";
 
 export default async function KnowledgeBaseLayout({ children }: { children: React.ReactNode }) {
   const [modules, updates, requests] = await Promise.all([
@@ -11,10 +11,8 @@ export default async function KnowledgeBaseLayout({ children }: { children: Reac
   ]);
 
   return (
-    <div className={styles.grid}>
-      <ModuleTree modules={modules} />
-      <main className={styles.main}>{children}</main>
-      <RightRail updates={updates} requests={requests} />
-    </div>
+    <ThreeColumnLayout left={<ModuleTree modules={modules} />} right={<RightRail updates={updates} requests={requests} />}>
+      {children}
+    </ThreeColumnLayout>
   );
 }
